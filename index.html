@@ -19,9 +19,7 @@
   --muted: #7a7a7a;
   --border: rgba(208,169,0,0.3);
 }
-
 * { box-sizing: border-box; margin: 0; padding: 0; }
-
 body {
   font-family: 'Noto Sans JP', sans-serif;
   background: var(--cream);
@@ -30,324 +28,164 @@ body {
   overflow-x: hidden;
 }
 
-/* ── HEADER ── */
-header {
-  background: var(--navy);
-  padding: 0;
-  position: relative;
-  overflow: hidden;
-}
+/* HEADER */
+header { background: var(--navy); position: relative; overflow: hidden; }
 header::before {
   content: '';
-  position: absolute;
-  inset: 0;
-  background: 
+  position: absolute; inset: 0;
+  background:
     radial-gradient(ellipse at 20% 50%, rgba(208,169,0,0.12) 0%, transparent 60%),
     radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.04) 0%, transparent 50%);
 }
-.header-inner {
-  position: relative;
-  padding: 24px 20px 20px;
-  text-align: center;
-}
-.header-jp {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: #fff;
-  letter-spacing: 0.2em;
-}
-.header-en {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.9rem;
-  font-weight: 300;
-  color: var(--gold);
-  letter-spacing: 0.3em;
-  margin-top: 4px;
-  font-style: italic;
-}
-.header-sub {
-  font-size: 0.7rem;
-  color: rgba(255,255,255,0.5);
-  margin-top: 10px;
-  letter-spacing: 0.05em;
-}
-.gold-line {
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  margin-top: 16px;
-}
+.header-inner { position: relative; padding: 24px 20px 20px; text-align: center; }
+.header-jp { font-family: 'Noto Serif JP', serif; font-size: 1.6rem; font-weight: 600; color: #fff; letter-spacing: 0.2em; }
+.header-en { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; font-weight: 300; color: var(--gold); letter-spacing: 0.3em; margin-top: 4px; font-style: italic; }
+.header-sub { font-size: 0.7rem; color: rgba(255,255,255,0.5); margin-top: 10px; }
+.gold-line { height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin-top: 16px; }
 
-/* ── LANG BAR ── */
+/* LANG BAR */
 .lang-bar {
   background: var(--warm-white);
   border-bottom: 1px solid var(--border);
   padding: 10px 16px;
-  display: flex;
-  justify-content: center;
-  gap: 6px;
-  flex-wrap: wrap;
+  display: flex; justify-content: center; gap: 6px; flex-wrap: wrap;
 }
 .lang-btn {
-  padding: 6px 14px;
-  border-radius: 20px;
-  border: 1.5px solid #ddd;
-  background: white;
-  font-size: 0.8rem;
-  cursor: pointer;
-  transition: all 0.25s;
-  font-family: 'Noto Sans JP', sans-serif;
-  color: var(--muted);
+  padding: 6px 14px; border-radius: 20px; border: 1.5px solid #ddd;
+  background: white; font-size: 0.8rem; cursor: pointer; transition: all 0.25s;
+  font-family: 'Noto Sans JP', sans-serif; color: var(--muted);
 }
 .lang-btn:hover { border-color: var(--gold); color: var(--navy); }
-.lang-btn.active {
-  background: var(--navy);
-  border-color: var(--navy);
-  color: white;
-  font-weight: 700;
-}
+.lang-btn.active { background: var(--navy); border-color: var(--navy); color: white; font-weight: 700; }
 
-/* ── MAIN ── */
-.main {
-  max-width: 480px;
-  margin: 0 auto;
-  padding: 24px 16px 40px;
-}
+/* MAIN */
+.main { max-width: 480px; margin: 0 auto; padding: 24px 16px 40px; }
 
-/* ── UPLOAD AREA ── */
-.upload-wrap {
-  position: relative;
-  margin-bottom: 16px;
-}
+/* UPLOAD */
 .upload-area {
-  background: white;
-  border: 2px dashed var(--border);
-  border-radius: 16px;
-  padding: 36px 20px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.25s;
-  position: relative;
-  overflow: hidden;
+  background: white; border: 2px dashed var(--border); border-radius: 16px;
+  padding: 36px 20px; text-align: center; cursor: pointer; transition: all 0.25s; margin-bottom: 16px;
 }
-.upload-area::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at center, rgba(208,169,0,0.04) 0%, transparent 70%);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-.upload-area:hover::before { opacity: 1; }
-.upload-area:hover { border-color: var(--gold); }
+.upload-area:hover { border-color: var(--gold); background: #fffbf0; }
 .upload-icon-wrap {
   width: 64px; height: 64px;
   background: linear-gradient(135deg, var(--navy) 0%, #2d4a9e 100%);
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 14px;
-  font-size: 1.6rem;
-  box-shadow: 0 4px 16px rgba(34,54,112,0.25);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 14px; font-size: 1.6rem; box-shadow: 0 4px 16px rgba(34,54,112,0.25);
 }
-.upload-label {
-  font-size: 0.95rem;
-  color: var(--navy);
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-.upload-sublabel {
-  font-size: 0.75rem;
-  color: var(--muted);
-}
+.upload-label { font-size: 0.95rem; color: var(--navy); font-weight: 700; margin-bottom: 4px; }
+.upload-sublabel { font-size: 0.75rem; color: var(--muted); }
 #fileInput { display: none; }
 
-/* ── PREVIEW ── */
-#previewArea { display: none; margin-bottom: 16px; }
-#preview {
-  width: 100%;
-  border-radius: 16px;
-  max-height: 280px;
-  object-fit: cover;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+/* PREVIEW + SCANNER */
+#previewArea { display: none; margin-bottom: 16px; position: relative; border-radius: 16px; overflow: hidden; }
+#preview { width: 100%; border-radius: 16px; max-height: 280px; object-fit: cover; box-shadow: 0 4px 20px rgba(0,0,0,0.12); display: block; }
+
+.scanner-overlay { position: absolute; inset: 0; border-radius: 16px; pointer-events: none; opacity: 0; transition: opacity 0.3s; }
+.scanner-overlay.active { opacity: 1; }
+.scan-dim { position: absolute; inset: 0; background: rgba(34,54,112,0.18); border-radius: 16px; }
+.scan-line {
+  position: absolute; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, transparent 0%, rgba(208,169,0,0.5) 20%, rgba(255,220,50,1) 50%, rgba(208,169,0,0.5) 80%, transparent 100%);
+  box-shadow: 0 0 12px 4px rgba(208,169,0,0.5);
+  animation: scanDown 1.8s ease-in-out infinite;
 }
+@keyframes scanDown {
+  0%   { top: 0%; }
+  50%  { top: calc(100% - 3px); }
+  100% { top: 0%; }
+}
+.scanner-corner { position: absolute; width: 20px; height: 20px; border-color: var(--gold); border-style: solid; opacity: 0.9; }
+.corner-tl { top: 8px; left: 8px; border-width: 2px 0 0 2px; }
+.corner-tr { top: 8px; right: 8px; border-width: 2px 2px 0 0; }
+.corner-bl { bottom: 8px; left: 8px; border-width: 0 0 2px 2px; }
+.corner-br { bottom: 8px; right: 8px; border-width: 0 2px 2px 0; }
+.scan-label {
+  position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+  font-size: 0.7rem; color: var(--gold); letter-spacing: 0.2em;
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  animation: pulse 1s ease-in-out infinite; white-space: nowrap;
+}
+@keyframes pulse { 0%,100%{opacity:0.5;} 50%{opacity:1;} }
+
 .retake-btn {
-  display: block;
-  width: 100%;
-  padding: 8px;
-  text-align: center;
-  font-size: 0.75rem;
-  color: var(--muted);
-  cursor: pointer;
-  margin-top: 8px;
-  border: none;
-  background: none;
+  display: block; width: 100%; padding: 8px; text-align: center;
+  font-size: 0.75rem; color: var(--muted); cursor: pointer; margin-top: 8px; border: none; background: none;
 }
 .retake-btn:hover { color: var(--navy); }
 
-/* ── ANALYZE BTN ── */
+/* ANALYZE BTN */
 .analyze-btn {
-  display: none;
-  width: 100%;
-  padding: 18px;
+  display: none; width: 100%; padding: 18px;
   background: linear-gradient(135deg, var(--gold) 0%, #b89300 100%);
-  color: var(--navy);
-  border: none;
-  border-radius: 12px;
-  font-size: 1rem;
-  font-weight: 700;
-  cursor: pointer;
-  letter-spacing: 0.05em;
-  transition: all 0.25s;
-  font-family: 'Noto Sans JP', sans-serif;
-  box-shadow: 0 4px 16px rgba(208,169,0,0.35);
-  position: relative;
-  overflow: hidden;
+  color: var(--navy); border: none; border-radius: 12px; font-size: 1rem; font-weight: 700;
+  cursor: pointer; letter-spacing: 0.05em; transition: all 0.25s;
+  font-family: 'Noto Sans JP', sans-serif; box-shadow: 0 4px 16px rgba(208,169,0,0.35);
 }
-.analyze-btn::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
-  opacity: 0;
-  transition: opacity 0.25s;
-}
-.analyze-btn:hover::after { opacity: 1; }
-.analyze-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(208,169,0,0.45); }
-.analyze-btn:disabled { opacity: 0.55; cursor: not-allowed; transform: none; box-shadow: none; }
+.analyze-btn:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(208,169,0,0.45); }
+.analyze-btn:disabled { opacity: 0.55; cursor: not-allowed; }
 
-/* ── LOADING ── */
-.loading {
-  display: none;
-  text-align: center;
-  padding: 32px 20px;
-}
+/* LOADING */
+.loading { display: none; text-align: center; padding: 32px 20px; }
 .loading-ring {
-  width: 48px; height: 48px;
-  border: 3px solid rgba(208,169,0,0.2);
-  border-top: 3px solid var(--gold);
-  border-radius: 50%;
-  animation: spin 0.9s ease-in-out infinite;
-  margin: 0 auto 16px;
+  width: 48px; height: 48px; border: 3px solid rgba(208,169,0,0.2);
+  border-top: 3px solid var(--gold); border-radius: 50%;
+  animation: spin 0.9s ease-in-out infinite; margin: 0 auto 16px;
 }
 @keyframes spin { to { transform: rotate(360deg); } }
-.loading-text {
-  font-size: 0.85rem;
-  color: var(--muted);
-  line-height: 1.6;
-}
+.loading-text { font-size: 0.85rem; color: var(--muted); line-height: 1.6; white-space: pre-wrap; }
 
-/* ── RESULT ── */
-.result-card {
-  display: none;
-  background: white;
-  border-radius: 16px;
-  overflow: hidden;
-  margin-top: 16px;
-  box-shadow: 0 4px 24px rgba(34,54,112,0.1);
-  animation: fadeUp 0.4s ease;
+/* RESULT TABS */
+.result-tabs { display: none; margin-top: 16px; }
+.tab-bar { display: flex; border-bottom: 2px solid var(--border); }
+.tab-btn {
+  flex: 1; padding: 10px 4px; background: none; border: none;
+  border-bottom: 2px solid transparent; margin-bottom: -2px;
+  font-size: 0.75rem; color: var(--muted); cursor: pointer;
+  font-family: 'Noto Sans JP', sans-serif; transition: all 0.2s; text-align: center;
 }
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.result-header {
-  background: var(--navy);
-  padding: 12px 18px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.result-header-label {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.85rem;
-  color: var(--gold);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-.result-body {
-  padding: 20px 18px 24px;
-  border-left: 3px solid var(--gold);
-}
-.result-text {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 0.93rem;
-  line-height: 2;
-  color: var(--text);
-  white-space: pre-wrap;
-}
+.tab-btn.active { color: var(--navy); border-bottom-color: var(--navy); font-weight: 700; }
+.tab-content { display: none; }
+.tab-content.active { display: block; animation: fadeUp 0.35s ease; }
+@keyframes fadeUp { from{opacity:0;transform:translateY(8px);} to{opacity:1;transform:translateY(0);} }
 
-/* ── TRIAL BADGE ── */
-.trial-badge {
-  text-align: center;
-  font-size: 0.75rem;
-  color: var(--muted);
-  margin-top: 14px;
-  padding: 8px;
-  border-radius: 8px;
-}
-.trial-badge .count-highlight {
-  color: var(--navy);
-  font-weight: 700;
-  font-size: 0.95rem;
-}
+.result-card { background: white; border-radius: 0 0 16px 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(34,54,112,0.1); }
+.result-header { background: var(--navy); padding: 12px 18px; display: flex; align-items: center; gap: 8px; }
+.result-header-label { font-family: 'Cormorant Garamond', serif; font-size: 0.85rem; color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; }
+.result-body { padding: 20px 18px 24px; border-left: 3px solid var(--gold); }
+.result-text { font-family: 'Noto Serif JP', serif; font-size: 0.93rem; line-height: 2; color: var(--text); white-space: pre-wrap; min-height: 60px; }
+.sub-text { font-size: 0.88rem; line-height: 1.9; color: var(--text); white-space: pre-wrap; min-height: 60px; }
 
-/* ── PAYWALL ── */
+/* タイプライターカーソル */
+.cursor { display: inline-block; width: 2px; height: 1em; background: var(--gold); margin-left: 2px; vertical-align: text-bottom; animation: blink 0.7s step-end infinite; }
+@keyframes blink { 50%{opacity:0;} }
+
+/* COPY BTN */
+.copy-btn {
+  margin-top: 12px; padding: 8px 18px; background: var(--navy); color: white;
+  border: none; border-radius: 8px; font-size: 0.78rem; cursor: pointer;
+  font-family: 'Noto Sans JP', sans-serif; transition: all 0.2s;
+}
+.copy-btn:hover { background: #2d4a9e; }
+.copy-btn.copied { background: #3a8a3a; }
+
+/* TRIAL */
+.trial-badge { text-align: center; font-size: 0.75rem; color: var(--muted); margin-top: 14px; }
+.trial-badge .count-highlight { color: var(--navy); font-weight: 700; font-size: 0.95rem; }
+
+/* PAYWALL */
 .paywall {
-  display: none;
-  background: var(--navy);
-  border-radius: 16px;
-  padding: 28px 20px;
-  text-align: center;
-  margin-top: 20px;
-  position: relative;
-  overflow: hidden;
+  display: none; background: var(--navy); border-radius: 16px;
+  padding: 28px 20px; text-align: center; margin-top: 20px; position: relative; overflow: hidden;
 }
-.paywall::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 50% 0%, rgba(208,169,0,0.15), transparent 70%);
-}
+.paywall::before { content:''; position:absolute; inset:0; background: radial-gradient(ellipse at 50% 0%, rgba(208,169,0,0.15), transparent 70%); }
 .paywall-icon { font-size: 2rem; margin-bottom: 10px; position: relative; }
-.paywall-title {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 1.1rem;
-  color: white;
-  margin-bottom: 8px;
-  position: relative;
-}
-.paywall-text {
-  font-size: 0.82rem;
-  color: rgba(255,255,255,0.65);
-  line-height: 1.7;
-  margin-bottom: 18px;
-  position: relative;
-}
-.paywall-btn {
-  padding: 14px 28px;
-  background: var(--gold);
-  color: var(--navy);
-  border: none;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 700;
-  cursor: pointer;
-  font-family: 'Noto Sans JP', sans-serif;
-  position: relative;
-  transition: all 0.2s;
-}
-.paywall-btn:hover { background: var(--gold-light); }
+.paywall-title { font-family: 'Noto Serif JP', serif; font-size: 1.1rem; color: white; margin-bottom: 8px; position: relative; }
+.paywall-text { font-size: 0.82rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 18px; position: relative; white-space: pre-wrap; }
+.paywall-btn { padding: 14px 28px; background: var(--gold); color: var(--navy); border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 700; cursor: pointer; font-family: 'Noto Sans JP', sans-serif; position: relative; }
 
 canvas { display: none; }
-
-/* ── FOOTER ── */
-footer {
-  text-align: center;
-  padding: 24px 16px;
-  font-size: 0.65rem;
-  color: rgba(34,54,112,0.35);
-  letter-spacing: 0.08em;
-}
+footer { text-align: center; padding: 24px 16px; font-size: 0.65rem; color: rgba(34,54,112,0.35); letter-spacing: 0.08em; }
 </style>
 </head>
 <body>
@@ -370,34 +208,69 @@ footer {
 
 <div class="main">
 
-  <div class="upload-wrap">
-    <div class="upload-area" id="uploadArea">
-      <div class="upload-icon-wrap">📷</div>
-      <div class="upload-label" id="uploadLabel">商品を撮影する</div>
-      <div class="upload-sublabel" id="uploadSublabel">タップして写真を撮る、または画像を選択</div>
-    </div>
-    <input type="file" id="fileInput" accept="image/*" capture="environment">
+  <div class="upload-area" id="uploadArea">
+    <div class="upload-icon-wrap">📷</div>
+    <div class="upload-label" id="uploadLabel">商品を撮影する</div>
+    <div class="upload-sublabel" id="uploadSublabel">タップして写真を撮る、または画像を選択</div>
   </div>
+  <input type="file" id="fileInput" accept="image/*" capture="environment">
 
   <div id="previewArea">
     <img id="preview" alt="preview">
-    <button class="retake-btn" id="retakeBtn">🔄 撮り直す / Retake</button>
+    <div class="scanner-overlay" id="scannerOverlay">
+      <div class="scan-dim"></div>
+      <div class="scan-line"></div>
+      <div class="scanner-corner corner-tl"></div>
+      <div class="scanner-corner corner-tr"></div>
+      <div class="scanner-corner corner-bl"></div>
+      <div class="scanner-corner corner-br"></div>
+      <div class="scan-label" id="scanLabel">SCANNING...</div>
+    </div>
+    <button class="retake-btn" id="retakeBtn">🔄 撮り直す</button>
   </div>
 
   <button class="analyze-btn" id="analyzeBtn">✨ ストーリーを読み解く</button>
 
   <div class="loading" id="loading">
     <div class="loading-ring"></div>
-    <div class="loading-text" id="loadingText">AIが商品のストーリーを<br>読み解いています...</div>
+    <div class="loading-text" id="loadingText">AIが商品のストーリーを読み解いています...</div>
   </div>
 
-  <div class="result-card" id="resultCard">
-    <div class="result-header">
-      <span style="color:var(--gold)">✦</span>
-      <span class="result-header-label" id="resultLabel">Product Story</span>
+  <div class="result-tabs" id="resultTabs">
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="story" id="tabStory">📖 ストーリー</button>
+      <button class="tab-btn" data-tab="pairing" id="tabPairing">🍽 ペアリング</button>
+      <button class="tab-btn" data-tab="sns" id="tabSns">📲 SNS投稿文</button>
     </div>
-    <div class="result-body">
-      <div class="result-text" id="resultText"></div>
+    <div class="result-card">
+      <div class="tab-content active" id="tab-story">
+        <div class="result-header">
+          <span style="color:var(--gold)">✦</span>
+          <span class="result-header-label" id="labelStory">商品ストーリー</span>
+        </div>
+        <div class="result-body">
+          <div class="result-text" id="resultStory"></div>
+        </div>
+      </div>
+      <div class="tab-content" id="tab-pairing">
+        <div class="result-header">
+          <span style="color:var(--gold)">✦</span>
+          <span class="result-header-label" id="labelPairing">ペアリング提案</span>
+        </div>
+        <div class="result-body">
+          <div class="sub-text" id="resultPairing"></div>
+        </div>
+      </div>
+      <div class="tab-content" id="tab-sns">
+        <div class="result-header">
+          <span style="color:var(--gold)">✦</span>
+          <span class="result-header-label" id="labelSns">SNS投稿文</span>
+        </div>
+        <div class="result-body">
+          <div class="sub-text" id="resultSns"></div>
+          <button class="copy-btn" id="copyBtn" onclick="copySns()">📋 コピーする</button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -406,13 +279,8 @@ footer {
   <div class="paywall" id="paywall">
     <div class="paywall-icon">🔓</div>
     <div class="paywall-title" id="paywallTitle">無料体験が終了しました</div>
-    <div class="paywall-text" id="paywallText">
-      3回の無料体験をお使いいただきました。<br>
-      続けてご利用いただくには、店舗スタッフまでお声がけください。
-    </div>
-    <button class="paywall-btn" id="paywallBtn" onclick="contactStore()">
-      スタッフに声をかける
-    </button>
+    <div class="paywall-text" id="paywallText">3回の無料体験をお使いいただきました。続けてご利用いただくには、店舗スタッフまでお声がけください。</div>
+    <button class="paywall-btn" id="paywallBtn" onclick="contactStore()">スタッフに声をかける</button>
   </div>
 
 </div>
@@ -421,126 +289,107 @@ footer {
 <footer>Powered by Smile Plus Consulting &nbsp;|&nbsp; モノみっけ &nbsp;©2025</footer>
 
 <script>
-// ════════════════════════════
-//  設定値 — ここだけ変更する
-// ════════════════════════════
 const WORKER_URL  = 'https://mono-mikke.yymmatsu.workers.dev';
 const FREE_LIMIT  = 3;
 const STORAGE_KEY = 'monomikke_v1_count';
-const CONTACT_URL = '';  // 店舗ページURL or 空欄ならalert
+const CONTACT_URL = '';
 
-// ════════════════════════════
-//  多言語テキスト定義
-// ════════════════════════════
 const i18n = {
   ja: {
-    uploadLabel:   '商品を撮影する',
-    uploadSub:     'タップして写真を撮る、または画像を選択',
-    analyzeBtn:    '✨ ストーリーを読み解く',
-    loadingText:   'AIが商品のストーリーを\n読み解いています...',
-    resultLabel:   '商品ストーリー',
-    retake:        '🔄 撮り直す',
-    trialLeft:     (n) => `無料体験：あと <span class="count-highlight">${n}</span> 回使えます`,
-    trialEnd:      '無料体験が終了しました',
-    paywallTitle:  '無料体験が終了しました',
-    paywallText:   '3回の無料体験をお使いいただきました。\n続けてご利用いただくには、店舗スタッフまでお声がけください。',
-    paywallBtn:    'スタッフに声をかける',
-    contactMsg:    '店舗スタッフにお声がけいただくか、QRコード横の連絡先までご連絡ください。',
-    errorMsg:      'エラーが発生しました。もう一度お試しください。',
+    uploadLabel:'商品を撮影する', uploadSub:'タップして写真を撮る、または画像を選択',
+    analyzeBtn:'✨ ストーリーを読み解く', loadingText:'AIが商品のストーリーを\n読み解いています...',
+    scanLabel:'SCANNING...', tabStory:'📖 ストーリー', tabPairing:'🍽 ペアリング', tabSns:'📲 SNS投稿文',
+    labelStory:'商品ストーリー', labelPairing:'ペアリング提案', labelSns:'SNS投稿文',
+    copyBtn:'📋 コピーする', copied:'✅ コピーしました', retake:'🔄 撮り直す',
+    trialLeft:(n)=>`無料体験：あと <span class="count-highlight">${n}</span> 回使えます`,
+    trialEnd:'無料体験が終了しました', paywallTitle:'無料体験が終了しました',
+    paywallText:'3回の無料体験をお使いいただきました。\n続けてご利用いただくには、店舗スタッフまでお声がけください。',
+    paywallBtn:'スタッフに声をかける', contactMsg:'店舗スタッフにお声がけいただくか、QRコード横の連絡先までご連絡ください。',
+    errorMsg:'エラーが発生しました。もう一度お試しください。',
   },
   en: {
-    uploadLabel:   'Scan a product',
-    uploadSub:     'Tap to take a photo or choose an image',
-    analyzeBtn:    '✨ Discover the Story',
-    loadingText:   'AI is reading the story\nof this product...',
-    resultLabel:   'Product Story',
-    retake:        '🔄 Retake',
-    trialLeft:     (n) => `Free trial: <span class="count-highlight">${n}</span> use(s) remaining`,
-    trialEnd:      'Free trial ended',
-    paywallTitle:  'Free Trial Ended',
-    paywallText:   'You have used all 3 free scans.\nPlease ask a staff member to continue.',
-    paywallBtn:    'Ask a Staff Member',
-    contactMsg:    'Please ask a staff member or contact us using the information next to the QR code.',
-    errorMsg:      'An error occurred. Please try again.',
+    uploadLabel:'Scan a product', uploadSub:'Tap to take a photo or choose an image',
+    analyzeBtn:'✨ Discover the Story', loadingText:'AI is discovering\nthe story of this product...',
+    scanLabel:'SCANNING...', tabStory:'📖 Story', tabPairing:'🍽 Pairing', tabSns:'📲 SNS Caption',
+    labelStory:'Product Story', labelPairing:'Pairing Ideas', labelSns:'SNS Caption',
+    copyBtn:'📋 Copy', copied:'✅ Copied!', retake:'🔄 Retake',
+    trialLeft:(n)=>`Free trial: <span class="count-highlight">${n}</span> use(s) remaining`,
+    trialEnd:'Free trial ended', paywallTitle:'Free Trial Ended',
+    paywallText:'You have used all 3 free scans.\nPlease ask a staff member to continue.',
+    paywallBtn:'Ask a Staff Member', contactMsg:'Please ask a staff member or use the contact info next to the QR code.',
+    errorMsg:'An error occurred. Please try again.',
   },
   zh: {
-    uploadLabel:   '拍摄商品',
-    uploadSub:     '点击拍照或选择图片',
-    analyzeBtn:    '✨ 探索背后的故事',
-    loadingText:   'AI正在解读\n这件商品的故事...',
-    resultLabel:   '商品故事',
-    retake:        '🔄 重新拍摄',
-    trialLeft:     (n) => `免费体验：剩余 <span class="count-highlight">${n}</span> 次`,
-    trialEnd:      '免费体验已结束',
-    paywallTitle:  '免费体验已结束',
-    paywallText:   '您已使用完3次免费体验。\n如需继续使用，请联系店员。',
-    paywallBtn:    '联系店员',
-    contactMsg:    '请联系店员，或通过二维码旁的联系方式与我们取得联系。',
-    errorMsg:      '发生错误，请重试。',
+    uploadLabel:'拍摄商品', uploadSub:'点击拍照或选择图片',
+    analyzeBtn:'✨ 探索背后的故事', loadingText:'AI正在解读\n这件商品的故事...',
+    scanLabel:'扫描中...', tabStory:'📖 故事', tabPairing:'🍽 搭配建议', tabSns:'📲 社交文案',
+    labelStory:'商品故事', labelPairing:'搭配建议', labelSns:'社交媒体文案',
+    copyBtn:'📋 复制', copied:'✅ 已复制', retake:'🔄 重新拍摄',
+    trialLeft:(n)=>`免费体验：剩余 <span class="count-highlight">${n}</span> 次`,
+    trialEnd:'免费体验已结束', paywallTitle:'免费体验已结束',
+    paywallText:'您已使用完3次免费体验。\n如需继续使用，请联系店员。',
+    paywallBtn:'联系店员', contactMsg:'请联系店员，或通过二维码旁的联系方式与我们取得联系。',
+    errorMsg:'发生错误，请重试。',
   },
   ko: {
-    uploadLabel:   '상품을 촬영하세요',
-    uploadSub:     '탭하여 사진 촬영 또는 이미지 선택',
-    analyzeBtn:    '✨ 스토리 보기',
-    loadingText:   'AI가 이 상품의\n이야기를 읽고 있습니다...',
-    resultLabel:   '상품 스토리',
-    retake:        '🔄 다시 찍기',
-    trialLeft:     (n) => `무료 체험: <span class="count-highlight">${n}</span>회 남았습니다`,
-    trialEnd:      '무료 체험이 종료되었습니다',
-    paywallTitle:  '무료 체험 종료',
-    paywallText:   '3회의 무료 체험을 모두 사용하셨습니다.\n계속 이용하시려면 직원에게 문의해 주세요.',
-    paywallBtn:    '직원에게 문의하기',
-    contactMsg:    '직원에게 문의하시거나 QR코드 옆 연락처로 연락해 주세요.',
-    errorMsg:      '오류가 발생했습니다. 다시 시도해 주세요.',
+    uploadLabel:'상품을 촬영하세요', uploadSub:'탭하여 사진 촬영 또는 이미지 선택',
+    analyzeBtn:'✨ 스토리 보기', loadingText:'AI가 이 상품의\n이야기를 읽고 있습니다...',
+    scanLabel:'스캔 중...', tabStory:'📖 스토리', tabPairing:'🍽 페어링', tabSns:'📲 SNS 문구',
+    labelStory:'상품 스토리', labelPairing:'페어링 제안', labelSns:'SNS 캡션',
+    copyBtn:'📋 복사하기', copied:'✅ 복사됨', retake:'🔄 다시 찍기',
+    trialLeft:(n)=>`무료 체험: <span class="count-highlight">${n}</span>회 남았습니다`,
+    trialEnd:'무료 체험이 종료되었습니다', paywallTitle:'무료 체험 종료',
+    paywallText:'3회의 무료 체험을 모두 사용하셨습니다.\n계속 이용하시려면 직원에게 문의해 주세요.',
+    paywallBtn:'직원에게 문의하기', contactMsg:'직원에게 문의하시거나 QR코드 옆 연락처로 연락해 주세요.',
+    errorMsg:'오류가 발생했습니다. 다시 시도해 주세요.',
   }
 };
 
-// ════════════════════════════
-//  状態管理
-// ════════════════════════════
 let currentLang = 'ja';
 let currentImageBase64 = null;
 
-// ════════════════════════════
-//  言語切替
-// ════════════════════════════
 document.querySelectorAll('.lang-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     currentLang = btn.dataset.lang;
     applyLang();
-    if (currentImageBase64) {
-      document.getElementById('resultCard').style.display = 'none';
-    }
+    if (currentImageBase64) document.getElementById('resultTabs').style.display = 'none';
   });
 });
 
 function applyLang() {
   const t = i18n[currentLang];
-  document.getElementById('uploadLabel').textContent   = t.uploadLabel;
+  document.getElementById('uploadLabel').textContent    = t.uploadLabel;
   document.getElementById('uploadSublabel').textContent = t.uploadSub;
-  document.getElementById('analyzeBtn').textContent    = t.analyzeBtn;
-  document.getElementById('retakeBtn').textContent     = t.retake;
-  document.getElementById('resultLabel').textContent   = t.resultLabel;
-  document.getElementById('paywallTitle').textContent  = t.paywallTitle;
-  document.getElementById('paywallText').textContent   = t.paywallText;
-  document.getElementById('paywallBtn').textContent    = t.paywallBtn;
+  document.getElementById('analyzeBtn').textContent     = t.analyzeBtn;
+  document.getElementById('retakeBtn').textContent      = t.retake;
+  document.getElementById('scanLabel').textContent      = t.scanLabel;
+  document.getElementById('tabStory').textContent       = t.tabStory;
+  document.getElementById('tabPairing').textContent     = t.tabPairing;
+  document.getElementById('tabSns').textContent         = t.tabSns;
+  document.getElementById('labelStory').textContent     = t.labelStory;
+  document.getElementById('labelPairing').textContent   = t.labelPairing;
+  document.getElementById('labelSns').textContent       = t.labelSns;
+  document.getElementById('copyBtn').textContent        = t.copyBtn;
+  document.getElementById('paywallTitle').textContent   = t.paywallTitle;
+  document.getElementById('paywallText').textContent    = t.paywallText;
+  document.getElementById('paywallBtn').textContent     = t.paywallBtn;
   const count = getCount();
   if (count > 0) updateTrialBadge(count);
 }
 
-// ════════════════════════════
-//  画像処理
-// ════════════════════════════
-document.getElementById('uploadArea').addEventListener('click', () => {
-  document.getElementById('fileInput').click();
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+  });
 });
 
-document.getElementById('retakeBtn').addEventListener('click', () => {
-  document.getElementById('fileInput').click();
-});
-
+document.getElementById('uploadArea').addEventListener('click', () => document.getElementById('fileInput').click());
+document.getElementById('retakeBtn').addEventListener('click', () => document.getElementById('fileInput').click());
 document.getElementById('fileInput').addEventListener('change', (e) => {
   const file = e.target.files[0];
   if (!file) return;
@@ -549,57 +398,41 @@ document.getElementById('fileInput').addEventListener('change', (e) => {
 });
 
 function processImage(file) {
-  // Canvas resize: 1280px / JPEG / 0.85 — file.size チェックなし
   const img = new Image();
   const objectURL = URL.createObjectURL(file);
   img.onload = () => {
     const canvas = document.getElementById('canvas');
-    let w = img.naturalWidth;
-    let h = img.naturalHeight;
-    if (w > 1280) {
-      h = Math.round(h * 1280 / w);
-      w = 1280;
-    }
-    canvas.width  = w;
-    canvas.height = h;
-    const ctx = canvas.getContext('2d');
-    ctx.drawImage(img, 0, 0, w, h);
+    let w = img.naturalWidth, h = img.naturalHeight;
+    if (w > 1280) { h = Math.round(h * 1280 / w); w = 1280; }
+    canvas.width = w; canvas.height = h;
+    canvas.getContext('2d').drawImage(img, 0, 0, w, h);
     currentImageBase64 = canvas.toDataURL('image/jpeg', 0.85).split(',')[1];
     URL.revokeObjectURL(objectURL);
-
     document.getElementById('preview').src = canvas.toDataURL('image/jpeg', 0.85);
-    document.getElementById('previewArea').style.display = 'block';
-    document.getElementById('analyzeBtn').style.display  = 'block';
-    document.getElementById('resultCard').style.display  = 'none';
-    document.getElementById('uploadArea').style.display  = 'none';
+    document.getElementById('previewArea').style.display  = 'block';
+    document.getElementById('analyzeBtn').style.display   = 'block';
+    document.getElementById('resultTabs').style.display   = 'none';
+    document.getElementById('uploadArea').style.display   = 'none';
   };
   img.src = objectURL;
 }
 
-// ════════════════════════════
-//  分析実行
-// ════════════════════════════
 document.getElementById('analyzeBtn').addEventListener('click', () => {
-  if (getCount() >= FREE_LIMIT) {
-    document.getElementById('paywall').style.display = 'block';
-    return;
-  }
+  if (getCount() >= FREE_LIMIT) { document.getElementById('paywall').style.display = 'block'; return; }
   analyze();
 });
 
 async function analyze() {
-  const t    = i18n[currentLang];
-  const btn  = document.getElementById('analyzeBtn');
-  const load = document.getElementById('loading');
-  const card = document.getElementById('resultCard');
-
+  const t   = i18n[currentLang];
+  const btn = document.getElementById('analyzeBtn');
   btn.disabled = true;
-  load.style.display = 'block';
-  document.getElementById('loadingText').textContent = t.loadingText;
-  card.style.display = 'none';
+  document.getElementById('loading').style.display    = 'block';
+  document.getElementById('loadingText').textContent  = t.loadingText;
+  document.getElementById('resultTabs').style.display = 'none';
+  startScanner();
 
   try {
-    const res = await fetch(WORKER_URL, {
+    const res  = await fetch(WORKER_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ image: currentImageBase64, language: currentLang })
@@ -609,67 +442,80 @@ async function analyze() {
     if (data.story) {
       const newCount = getCount() + 1;
       setCount(newCount);
-      document.getElementById('resultLabel').textContent = t.resultLabel;
-      document.getElementById('resultText').textContent  = data.story;
-      card.style.display = 'block';
-      card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      stopScanner();
+      document.getElementById('loading').style.display = 'none';
+
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      document.getElementById('tabStory').classList.add('active');
+      document.getElementById('tab-story').classList.add('active');
+      document.getElementById('resultTabs').style.display = 'block';
+
+      typewriter('resultStory',   data.story   || '', 20);
+      typewriter('resultPairing', data.pairing || '', 20);
+      document.getElementById('resultSns').textContent = data.sns || '';
+
+      document.getElementById('resultTabs').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       updateTrialBadge(newCount);
       if (newCount >= FREE_LIMIT) {
-        setTimeout(() => {
-          document.getElementById('paywall').style.display = 'block';
-        }, 1200);
+        setTimeout(() => { document.getElementById('paywall').style.display = 'block'; }, 1500);
       }
     } else {
+      stopScanner();
       alert(t.errorMsg);
     }
   } catch (err) {
+    stopScanner();
     console.error(err);
     alert(t.errorMsg);
   } finally {
     btn.disabled = false;
-    load.style.display = 'none';
+    document.getElementById('loading').style.display = 'none';
   }
 }
 
-// ════════════════════════════
-//  カウンター
-// ════════════════════════════
-function getCount() {
-  return parseInt(localStorage.getItem(STORAGE_KEY) || '0');
+function startScanner() { document.getElementById('scannerOverlay').classList.add('active'); }
+function stopScanner()  { document.getElementById('scannerOverlay').classList.remove('active'); }
+
+function typewriter(elementId, text, speed = 20) {
+  const el = document.getElementById(elementId);
+  el.innerHTML = '';
+  const cursor = document.createElement('span');
+  cursor.className = 'cursor';
+  el.appendChild(cursor);
+  let i = 0;
+  const timer = setInterval(() => {
+    if (i < text.length) { cursor.insertAdjacentText('beforebegin', text[i]); i++; }
+    else { clearInterval(timer); cursor.remove(); }
+  }, speed);
 }
-function setCount(n) {
-  localStorage.setItem(STORAGE_KEY, n.toString());
+
+function copySns() {
+  const t    = i18n[currentLang];
+  const btn  = document.getElementById('copyBtn');
+  const text = document.getElementById('resultSns').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = t.copied;
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = t.copyBtn; btn.classList.remove('copied'); }, 2000);
+  });
 }
+
+function getCount() { return parseInt(localStorage.getItem(STORAGE_KEY) || '0'); }
+function setCount(n) { localStorage.setItem(STORAGE_KEY, n.toString()); }
 function updateTrialBadge(count) {
-  const t         = i18n[currentLang];
-  const badge     = document.getElementById('trialBadge');
-  const remaining = FREE_LIMIT - count;
-  if (remaining > 0) {
-    badge.innerHTML = t.trialLeft(remaining);
-  } else {
-    badge.textContent = t.trialEnd;
-  }
+  const badge = document.getElementById('trialBadge');
+  const rem   = FREE_LIMIT - count;
+  badge.innerHTML = rem > 0 ? i18n[currentLang].trialLeft(rem) : i18n[currentLang].trialEnd;
 }
-
 function contactStore() {
-  const t = i18n[currentLang];
-  if (CONTACT_URL) {
-    window.open(CONTACT_URL, '_blank');
-  } else {
-    alert(t.contactMsg);
-  }
+  if (CONTACT_URL) window.open(CONTACT_URL, '_blank');
+  else alert(i18n[currentLang].contactMsg);
 }
 
-// ════════════════════════════
-//  初期化
-// ════════════════════════════
 const initCount = getCount();
-if (initCount >= FREE_LIMIT) {
-  document.getElementById('paywall').style.display = 'block';
-}
-if (initCount > 0) {
-  updateTrialBadge(initCount);
-}
+if (initCount >= FREE_LIMIT) document.getElementById('paywall').style.display = 'block';
+if (initCount > 0) updateTrialBadge(initCount);
 </script>
 </body>
 </html>
